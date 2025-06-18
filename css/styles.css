@@ -120,6 +120,7 @@ h2,h3{
 }
 
 img{
+  border-radius: 5px;
   width:100%;
 }
 
@@ -133,6 +134,11 @@ p{
     direction: rtl;
    text-align:right;
    
+ }
+
+ .top:hover{
+    background-color: var(--royal-blue);
+    color:var(--pastel-blue);
  }
  .read-more {
      background-color: var(--cobalt-blue);
