@@ -142,8 +142,8 @@ function displayPets(data) {
 
 //This is the function definition of formReset(). It reloads tha page
 function formReset(){
+    //reset form
+    form.reset();
     // reload the current page
     window.location.reload();
-      //reset form
-     form.reset();
 }
