@@ -101,8 +101,17 @@ button:hover{
 }
 
 .output{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:1rem;
   margin: 0 auto;
   padding:1rem;
+}
+
+.card{
+    background-color : var(--pastel-blue);
+    border: 0.3rem solid var(--sapphire-blue);
+    padding:1rem;
 }
 
 h2,h3{
@@ -119,16 +128,21 @@ p{
   margin-bottom:1rem;
 }
 
-a {
-	background-color: var(--royal-blue);
-	border: 0.2rem inset var(--cornflower-blue);
-    color: var(--pastel-blue);
-    margin:1rem;
-	padding: 0.1rem;
-	text-decoration: none;
-}
-
-a:hover {
-	background-color: var(--verdigris);
-    color:var(--indigo);
-}
+/*Not showing to the right for some reason*/
+.top{
+    direction: rtl;
+   text-align:right;
+   
+ }
+ .read-more {
+     background-color: var(--cobalt-blue);
+     border: 0.2rem inset var(--cornflower-blue);
+   margin:1rem;
+     padding: 0.03rem;
+     color: var(--pastel-blue);
+     text-decoration: none;
+ }
+ 
+ .read-more:hover {
+     background-color: var(--indigo);
+ }
