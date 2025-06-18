@@ -133,5 +133,17 @@ function displayPets(data) {
   readMore.setAttribute("target","_blank");
   pAbout.appendChild(readMore);
     result.appendChild(pAbout);
+  let btnTwo = document.createElement("button");
+  btnTwo.textContent = "Try Again";
+  result.appendChild(btnTwo);
+  btnTwo.addEventListener("click", formReset);
   //console.log("pAbout" , pAbout);
+}
+
+//This is the function definition of formReset(). It reloads tha page
+function formReset(){
+    // reload the current page
+    window.location.reload();
+      //reset form
+     form.reset();
 }
