@@ -1,0 +1,89 @@
+
+:root{
+    --baby-blue:#89CFF0;
+    --cobalt-blue:#0047AB;
+    --cornflower-blue:#6495ED;
+    --indigo:#3F00FF;
+    --pastel-blue:#A7C7E7;
+    --sapphire-blue:#0F52BA;
+}
+
+
+body{
+    background-color: var(--baby-blue);
+    font-family: "grappa-variable", sans-serif;
+}
+
+h1{
+    color:var(--sapphire-blue);
+    text-align: center;
+}
+.form-container{
+    width:600px;
+    margin: 0 auto;
+}
+
+.form{
+    padding: 1rem;
+    width:100%;
+}
+fieldset{
+    border: 0.2rem solid  var(--cobalt-blue);
+    padding:1.2rem;
+    margin:1rem;
+}
+
+legend{
+    color:var(--cobalt-blue);
+    font-size:1.4rem;
+    font-weight:bolder;
+}
+
+label{
+    color:var(--cobalt-blue);
+    font-weight:bold;
+}
+
+input,select{
+    padding:0.2rem;
+    margin-right:0.3rem;
+    width:100%;
+}
+button{
+    background-color: var(--cornflower-blue);
+    border:0.2rem solid var(--cobalt-blue);
+    border-radius:0.6rem;
+    color:var(--cobalt-blue);
+    font-family: inherit;
+    font-size:1.1rem;
+    font-weight: bold;
+    padding:0.3rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background-color: var(--indigo);
+    color: var(--pastel-blue);
+}
+
+.display-none{
+  display:none;
+}
+
+.output{
+  margin: 0 auto;
+  padding:1rem;
+}
+
+h2,h3{
+  color:var(--cobalt-blue);
+  text-align:center;
+}
+
+img{
+  width:100%;
+}
+
+p{
+  color:var(--cobalt-blue);
+}
