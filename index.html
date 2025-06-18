@@ -14,20 +14,20 @@
                 <fieldset>
                     <legend>Petfinder App</legend>
                     <p>
-                        <label for="name">Name</label>
+                        <label for="name">Name: <span> *</span></label>
                         <input type="text" id="name" required>
                     </p>
                     <p>
-                        <label for="email">Email</label>
+                        <label for="email">Email: <span> *</span> </label>
                         <input type="email" id="email" required>
                     </p>
                     <p>
-                        <label for="zip">Zip Code</label>
+                        <label for="zip">Zip Code:<span> *</span></label>
                         <input id="zip" name="zip" type="text" pattern="[0-9]*" required>
                     </p>
                     <p>
-                        <label for="type">Type of Pet</label>
-                        <select id="type" name="kind">
+                        <label for="type">Type of Pet: <span> *</span> </label>
+                        <select id="type" name="kind" size="5" required>
                             <option>--Select One--</option>
                             <option value="bird">Bird &#128038;</option>
                             <option value="cat">Cat &#128049;</option>
