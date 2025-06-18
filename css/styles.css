@@ -6,6 +6,8 @@
     --indigo:#3F00FF;
     --pastel-blue:#A7C7E7;
     --sapphire-blue:#0F52BA;
+    --royal-blue: 	#4169E1;
+    --verdigris : 	#40B5AD;
 }
 
 
@@ -89,14 +91,15 @@ p{
 }
 
 a {
-	background-color: var(--cobalt-blue);
+	background-color: var(--royal-blue);
 	border: 0.2rem inset var(--cornflower-blue);
+    color: var(--pastel-blue);
     margin:1rem;
-	padding: 0.03rem;
-	color: var(--pastel-blue);
+	padding: 0.1rem;
 	text-decoration: none;
 }
 
 a:hover {
-	background-color: var(--sapphire-blue);
+	background-color: var(--verdigris);
+    color:var(--indigo);
 }

@@ -125,14 +125,16 @@ function displayPets(data) {
     img.alt= typeOfAnimal + name;
     result.appendChild(img);
   }
-  let pAbout = document.createElement("p");
-  pAbout.textContent = about;
+  let pLink = document.createElement("p");
   let readMore = document.createElement("a");
-  readMore.textContent="Read More";
+  readMore.textContent="Find More";
   readMore.setAttribute("href",link);
   readMore.setAttribute("target","_blank");
-  pAbout.appendChild(readMore);
-    result.appendChild(pAbout);
+  pLink.appendChild(readMore);
+  result.appendChild(pLink);
+  let pAbout = document.createElement("p");
+  pAbout.textContent = about;
+  result.appendChild(pAbout);
   let btnTwo = document.createElement("button");
   btnTwo.textContent = "Try Again";
   result.appendChild(btnTwo);
