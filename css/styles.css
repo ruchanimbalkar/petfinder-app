@@ -87,3 +87,16 @@ img{
 p{
   color:var(--cobalt-blue);
 }
+
+a {
+	background-color: var(--cobalt-blue);
+	border: 0.2rem inset var(--cornflower-blue);
+    margin:1rem;
+	padding: 0.03rem;
+	color: var(--pastel-blue);
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: var(--sapphire-blue);
+}
