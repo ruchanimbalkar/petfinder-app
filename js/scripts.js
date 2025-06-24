@@ -38,7 +38,7 @@ function getAdoptablePets(formData) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log("data" ,data);
         dataFromAPI = data;
         displayPets(dataFromAPI);
       })
@@ -65,88 +65,103 @@ function onFormSubmit(event) {
 }
 
 function displayPets(data) {
-  console.log(data);
+  //Clear previous results
+  result.textContent ="";
+  console.log("Inside displayPets() function" ,data);
   // let objLen = data.length;
   // console.log("Length : ", objLen);
   let animals = data.animals;
-  for (let animal of animals) {
-    //Link
-    let link = animal.url;
-    //Name
-    let name = animal.name;
-    console.log("Name", name);
-    // Breed (or "Breed unknown")
-    //let breed = data.animals[0].breeds;
-    // breed = JSON.stringify(breed);
-    let breeds = animal.breeds;
-    breeds = Object.values(breeds);
-    let breed = breeds.filter((item) => item != true && item != false);
-    console.log("breeds", breed);
-    // Color (or "Color unknown")
-    let colors = animal.colors;
-    console.log("color", colors);
-    colors = Object.values(colors);
-    let color = colors.filter(
-      (item) => item != true && item != false && item != null
-    );
-    //   console.log("color", color);
-    // color= color.toString();
-
-    // Photo (or a placeholder if no photo)
-    let imgSrc;
-    if (animal.photos.length > 0) {
-      imgSrc = animal.photos[0].large;
-    } else {
-      imgSrc = "Sorry, no photo available.";
-    }
-
-    console.log("image source ", imgSrc);
-    let about = animal.description;
-    console.log("about", about);
-    // Description (clean up HTML using the provided decodeHTML() function)
+  console.log("animals length ", animals.length);
+  if(animals.length === 0){
     result.classList.remove("display-none");
-    let card = document.createElement("div");
-    card.className = "card";
-    let headingTwo = document.createElement("h2");
-    headingTwo.textContent = typeOfAnimal;
-    card.appendChild(headingTwo);
-    let headingThree = document.createElement("h3");
-    headingThree.textContent = name;
-    card.appendChild(headingThree);
-    let backToTop = document.createElement("a");
-    backToTop.className = "top";
-    backToTop.textContent = "Back to Top";
-    backToTop.setAttribute("href", "#up");
-    card.appendChild(backToTop);
-    let pBreed = document.createElement("p");
-    pBreed.textContent = "Breed Info. : " + breed;
-    card.appendChild(pBreed);
-    let pColor = document.createElement("p");
-    pColor.textContent = "Color(s) : " + color;
-    card.appendChild(pColor);
-    if (imgSrc === "Sorry, no photo available.") {
-      let pNoPhoto = document.createElement("p");
-      pNoPhoto.textContent = imgSrc;
-      card.appendChild(pNoPhoto);
-    } else {
-      let img = document.createElement("img");
-      img.src = imgSrc;
-      img.alt = typeOfAnimal + name;
-      card.appendChild(img);
-    }
-    let pAbout = document.createElement("p");
-    pAbout.textContent = about;
-    card.appendChild(pAbout);
-    let readMore = document.createElement("a");
-    readMore.className = "read-more";
-    readMore.textContent = "Find More";
-    readMore.setAttribute("href", link);
-    readMore.setAttribute("target", "_blank");
-    let pLink = document.createElement("p");
-    pLink.appendChild(readMore);
-    card.appendChild(pLink);
-    result.appendChild(card);
+    let pMessage = document.createElement("p");
+    console.log("result",result);
+    let message = "No data available at your zipcode for the selected animal. Please try again with a different animal or different zipcode";
+    pMessage.textContent = message;
+    result.appendChild(pMessage);
+    console.log("result",result);
   }
+  else{
+    for (let animal of animals) {
+      //Link
+      let link = animal.url;
+      //Name
+      let name = animal.name;
+      console.log("Name", name);
+      // Breed (or "Breed unknown")
+      //let breed = data.animals[0].breeds;
+      // breed = JSON.stringify(breed);
+      let breeds = animal.breeds;
+      breeds = Object.values(breeds);
+      let breed = breeds.filter((item) => item != true && item != false);
+      console.log("breeds", breed);
+      // Color (or "Color unknown")
+      let colors = animal.colors;
+      console.log("color", colors);
+      colors = Object.values(colors);
+      let color = colors.filter(
+        (item) => item != true && item != false && item != null
+      );
+      //   console.log("color", color);
+      // color= color.toString();
+  
+      // Photo (or a placeholder if no photo)
+      let imgSrc;
+      if (animal.photos.length > 0) {
+        imgSrc = animal.photos[0].large;
+      } else {
+        imgSrc = "Sorry, no photo available.";
+      }
+  
+      console.log("image source ", imgSrc);
+      let about = animal.description;
+      console.log("about", about);
+      // Description (clean up HTML using the provided decodeHTML() function)
+      result.classList.remove("display-none");
+      let card = document.createElement("div");
+      card.className = "card";
+      let headingTwo = document.createElement("h2");
+      headingTwo.textContent = typeOfAnimal;
+      card.appendChild(headingTwo);
+      let headingThree = document.createElement("h3");
+      headingThree.textContent = name;
+      card.appendChild(headingThree);
+      let backToTop = document.createElement("a");
+      backToTop.className = "top";
+      backToTop.textContent = "Back to Top";
+      backToTop.setAttribute("href", "#up");
+      card.appendChild(backToTop);
+      let pBreed = document.createElement("p");
+      pBreed.textContent = "Breed Info. : " + breed;
+      card.appendChild(pBreed);
+      let pColor = document.createElement("p");
+      pColor.textContent = "Color(s) : " + color;
+      card.appendChild(pColor);
+      if (imgSrc === "Sorry, no photo available.") {
+        let pNoPhoto = document.createElement("p");
+        pNoPhoto.textContent = imgSrc;
+        card.appendChild(pNoPhoto);
+      } else {
+        let img = document.createElement("img");
+        img.src = imgSrc;
+        img.alt = typeOfAnimal + name;
+        card.appendChild(img);
+      }
+      let pAbout = document.createElement("p");
+      pAbout.textContent = about;
+      card.appendChild(pAbout);
+      let readMore = document.createElement("a");
+      readMore.className = "read-more";
+      readMore.textContent = "Find More";
+      readMore.setAttribute("href", link);
+      readMore.setAttribute("target", "_blank");
+      let pLink = document.createElement("p");
+      pLink.appendChild(readMore);
+      card.appendChild(pLink);
+      result.appendChild(card);
+    }
+  }
+
   let btnTwo = document.createElement("button");
   btnTwo.textContent = "Try Again";
   result.appendChild(btnTwo);
